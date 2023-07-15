@@ -44,8 +44,8 @@ refs.breed_select.addEventListener('change', event => {
       refs.loaderMessage.classList.remove('hidden');
       setTimeout(() => {
         const catHtml = `
-      <div>
-        <img width="${cat.width}" heigth="${cat.heigth}" src="${cat.url}" alt="${cat.breeds[0].name}" />
+      <div class="img-container">
+        <img width="400px" heigth="200px" src="${cat.url}" alt="${cat.breeds[0].name}" />
       </div>
       <div class="cat-description-container">
         <h2>${cat.breeds[0].name}</h2>
