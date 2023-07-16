@@ -19,7 +19,7 @@ fetchBreeds()
   .then(breeds_name => {
     const optionsHtml = breeds_name.reduce((acc, { id, name }) => {
       return acc + `<option value="${id}">${name}</option>`;
-    });
+    }, '');
 
     refs.breed_select.insertAdjacentHTML('beforeend', optionsHtml);
     new SlimSelect({
