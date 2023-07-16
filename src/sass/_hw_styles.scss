@@ -1,7 +1,13 @@
+h2,
+p {
+  margin: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 15px;
 }
 
 .hidden {
@@ -13,11 +19,13 @@ img {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .img-container {
-  min-width: 400px;
-  min-height: 200px;
+  min-width: 600px;
+  // height: 400px;
 }
 
 .breed-select {
@@ -27,6 +35,19 @@ img {
 .cat-info {
   display: flex;
   gap: 20px;
+}
+
+.breed-select {
+  width: 20%;
+}
+
+.about-cat {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: fit-content;
+  font-size: 30px;
 }
 
 // loader

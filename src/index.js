@@ -61,11 +61,13 @@ refs.breed_select.addEventListener('change', event => {
 function createCat(imgUrl, catName, catDescription, catTemperament) {
   return `
       <div class="img-container">
-        <img width="400px" heigth="200px" src="${imgUrl}" alt="${catName}" />
+        <img width="600px" heigth="400px" src="${imgUrl}" alt="${catName}" />
       </div>
       <div class="cat-description-container">
-        <h2>${catName}</h2>
-        <p>${catDescription}</p>
-        <p>Temperament: ${catTemperament}</p>
+        <div class="about-cat">
+            <h2>${catName}</h2>
+            <p>${catDescription}</p>
+            <p>Temperament: ${catTemperament}</p>
+        </div>
       </div>`;
 }
