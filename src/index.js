@@ -43,15 +43,12 @@ refs.breed_select.addEventListener('change', event => {
       refs.catInfoContainer.innerHTML = '';
       refs.loaderMessage.classList.remove('hidden');
       setTimeout(() => {
-        const catHtml = `
-      <div class="img-container">
-        <img width="400px" heigth="200px" src="${cat.url}" alt="${cat.breeds[0].name}" />
-      </div>
-      <div class="cat-description-container">
-        <h2>${cat.breeds[0].name}</h2>
-        <p>${cat.breeds[0].description}</p>
-        <p>Temperament: ${cat.breeds[0].temperament}</p>
-      </div>`;
+        const catHtml = createCat(
+          cat.url,
+          cat.breeds[0].name,
+          cat.breeds[0].description,
+          cat.breeds[0].temperament
+        );
         refs.catInfoContainer.innerHTML = catHtml;
         refs.loaderMessage.classList.add('hidden');
       }, 1000);
@@ -63,3 +60,15 @@ refs.breed_select.addEventListener('change', event => {
       );
     });
 });
+
+function createCat(imgUrl, catName, catDescription, catTemperament) {
+  return `
+      <div class="img-container">
+        <img width="400px" heigth="200px" src="${imgUrl}" alt="${catName}" />
+      </div>
+      <div class="cat-description-container">
+        <h2>${catName}</h2>
+        <p>${catDescription}</p>
+        <p>Temperament: ${catTemperament}</p>
+      </div>`;
+}
