@@ -40,13 +40,12 @@ refs.breed_select.addEventListener('change', event => {
       refs.catInfoContainer.innerHTML = '';
       refs.loaderMessage.classList.remove('hidden');
       setTimeout(() => {
-        const catHtml = createCat(
+        refs.catInfoContainer.innerHTML = createCat(
           catImg,
           catName,
           catDescription,
           catTemperament
         );
-        refs.catInfoContainer.innerHTML = catHtml;
         refs.loaderMessage.classList.add('hidden');
       }, 1000);
     })
