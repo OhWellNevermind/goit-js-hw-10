@@ -36,18 +36,15 @@ fetchBreeds()
 
 refs.breed_select.addEventListener('change', event => {
   fetchCatByBreed(refs.breed_select.value)
-    .then(data => {
-      return data[0];
-    })
-    .then(cat => {
+    .then(({ catImg, catName, catDescription, catTemperament }) => {
       refs.catInfoContainer.innerHTML = '';
       refs.loaderMessage.classList.remove('hidden');
       setTimeout(() => {
         const catHtml = createCat(
-          cat.url,
-          cat.breeds[0].name,
-          cat.breeds[0].description,
-          cat.breeds[0].temperament
+          catImg,
+          catName,
+          catDescription,
+          catTemperament
         );
         refs.catInfoContainer.innerHTML = catHtml;
         refs.loaderMessage.classList.add('hidden');

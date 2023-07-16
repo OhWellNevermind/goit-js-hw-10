@@ -19,11 +19,16 @@ function fetchCatByBreed(breedId) {
     .then(response => {
       return response.data;
     })
-    .then(data => {
+    .then(([data]) => {
       if (data.length === 0) {
         throw new Error();
       }
-      return data;
+      return {
+        catImg: data.url,
+        catName: data.breeds[0].name,
+        catDescription: data.breeds[0].description,
+        catTemperament: data.breeds[0].temperament,
+      };
     });
 }
 
